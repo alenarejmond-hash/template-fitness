@@ -14,39 +14,102 @@ const InstagramIcon = ({ className }) => (
 );
 
 // ==========================================
-// ⚙️ НАСТРОЙКИ КОНТЕНТА (МЕНЯТЬ ТЕКСТ, ФОТО И ССЫЛКИ ЗДЕСЬ)
+// ⚙️ НАСТРОЙКИ КОНТЕНТА (МУЛЬТИЯЗЫЧНОСТЬ)
 // ==========================================
 const CONTENT = {
-  bgImage: '/bg-fitness.webp', // ФОН: файл bg-fitness.jpg в папке public
-  avatar: '/avatar-fitness.webp', // АВАТАР: файл avatar-fitness.jpg в папке public
-  badge: 'Трансформация',
-  name1: 'Карен',
-  name2: 'Сарян',
-  role: 'Элитный Тренер',
-  username: '@karen_sila',
-  subUsername: 'Без Отговорок',
-  location: 'Очно: Мск / Онлайн',
-  tags: ['VIP-сопровождение', 'Коррекция осанки', 'Биохакинг и питание'],
-  stat1Title: 'Лет Опыта',
-  stat1Value: '8',
-  stat2Title: 'Трансформаций',
-  stat2Value: '500+',
-  waLink: 'https://wa.me/79990000000',
-  instLink: 'https://instagram.com/твой_юзернейм',
-  actionText: 'Начать работу',
-  actionLink: 'https://t.me/твой_юзернейм?text=Хочу%20тело%20мечты!'
+  RU: {
+    bgImage: '/bg-fitness.webp', 
+    avatar: '/avatar-fitness.webp', 
+    badge: 'Трансформация',
+    name1: 'Карен',
+    name2: 'Сарян',
+    role: 'Элитный Тренер',
+    username: '@karen_sila',
+    subUsername: 'Без Отговорок',
+    location: 'Очно: Мск / Онлайн',
+    tags: ['VIP-сопровождение', 'Коррекция осанки', 'Биохакинг и питание'],
+    stat1Title: 'Лет Опыта',
+    stat1Value: '8',
+    stat2Title: 'Трансформаций',
+    stat2Value: '500+',
+    waLink: 'https://wa.me/79990000000',
+    instLink: 'https://instagram.com/твой_юзернейм',
+    actionText: 'Начать работу',
+    actionLink: 'https://t.me/твой_юзернейм?text=Хочу%20тело%20мечты!',
+    shareTitle: 'Поделиться визиткой',
+    shareDesc: 'Дайте отсканировать QR-код или отправьте ссылку напрямую.',
+    copied: 'Скопировано!',
+    copy: 'Копировать',
+    shareBtn: 'Отправить',
+    vcardTitle: 'Моя цифровая визитка',
+    vcardDesc: 'Привет! Вот моя визитка с контактами:'
+  },
+  AM: {
+    bgImage: '/bg-fitness.webp', 
+    avatar: '/avatar-fitness.webp', 
+    badge: 'Տրանսֆորմացիա',
+    name1: 'Կարեն',
+    name2: 'Սարյան',
+    role: 'Էլիտար Մարզիչ',
+    username: '@karen_sila',
+    subUsername: 'Առանց արդարացումների',
+    location: 'Առկա: Մոսկվա / Օնլայն',
+    tags: ['VIP ուղեկցում', 'Կեցվածքի շտկում', 'Բիոհաքինգ և սնուցում'],
+    stat1Title: 'Տարվա Փորձ',
+    stat1Value: '8',
+    stat2Title: 'Տրանսֆորմացիա',
+    stat2Value: '500+',
+    waLink: 'https://wa.me/79990000000',
+    instLink: 'https://instagram.com/твой_юзернейм',
+    actionText: 'Սկսել աշխատանքը',
+    actionLink: 'https://t.me/твой_юзернейм?text=Ուզում%20եմ%20երազանքիս%20մարմինը!',
+    shareTitle: 'Կիսվել այցեքարտով',
+    shareDesc: 'Թույլ տվեք սկանավորել QR կոդը կամ անմիջապես ուղարկեք հղումը:',
+    copied: 'Պատճենված է',
+    copy: 'Պատճենել',
+    shareBtn: 'Ուղարկել',
+    vcardTitle: 'Իմ թվային այցեքարտը',
+    vcardDesc: 'Ողջույն։ Ահա իմ այցեքարտը կոնտակտներով՝'
+  },
+  EN: {
+    bgImage: '/bg-fitness.webp', 
+    avatar: '/avatar-fitness.webp', 
+    badge: 'Transformation',
+    name1: 'Karen',
+    name2: 'Saryan',
+    role: 'Elite Trainer',
+    username: '@karen_sila',
+    subUsername: 'No Excuses',
+    location: 'In-person: MSK / Online',
+    tags: ['VIP Coaching', 'Posture Correction', 'Biohacking & Nutrition'],
+    stat1Title: 'Years Exp.',
+    stat1Value: '8',
+    stat2Title: 'Transformations',
+    stat2Value: '500+',
+    waLink: 'https://wa.me/79990000000',
+    instLink: 'https://instagram.com/твой_юзернейм',
+    actionText: 'Start Now',
+    actionLink: 'https://t.me/твой_юзернейм?text=I%20want%20a%20dream%20body!',
+    shareTitle: 'Share Card',
+    shareDesc: 'Let them scan the QR code or send the link directly.',
+    copied: 'Copied!',
+    copy: 'Copy',
+    shareBtn: 'Share',
+    vcardTitle: 'My digital card',
+    vcardDesc: 'Hi! Here is my digital card with contacts:'
+  }
 };
 
 // ==========================================
-// 🎨 ГЛОБАЛЬНЫЕ СТИЛИ (Только необходимое)
+// 🎨 ГЛОБАЛЬНЫЕ СТИЛИ
 // ==========================================
 const globalStyles = `
   :root {
-    --card-h: calc(min(22rem, 50vh) * 1.6);
+    --card-h: calc(min(26rem, 52dvh) * 1.6);
   }
   @media (min-width: 640px) {
     :root {
-      --card-h: calc(min(22rem, 50vh) * 1.5);
+      --card-h: calc(min(26rem, 52dvh) * 1.5);
     }
   }
   body {
@@ -105,50 +168,67 @@ const globalStyles = `
   }
   
   /* Эффект сгорания бумаги */
-  @keyframes burn-mask-reveal {
-    0% { -webkit-mask-position: 100% 0%; mask-position: 100% 0%; }
-    100% { -webkit-mask-position: 0% 100%; mask-position: 0% 100%; }
+  @media (min-width: 640px) {
+    @keyframes burn-mask-reveal {
+      0% { -webkit-mask-position: 100% 0%; mask-position: 100% 0%; }
+      100% { -webkit-mask-position: 0% 100%; mask-position: 0% 100%; }
+    }
+    @keyframes burn-fire-scan {
+      0% { background-position: 100% 0%; opacity: 0; }
+      5% { opacity: 1; }
+      95% { opacity: 1; }
+      100% { background-position: 0% 100%; opacity: 0; }
+    }
+    .smooth-mask-wipe {
+      -webkit-mask-image: linear-gradient(225deg, transparent 47%, rgba(0,0,0,0.6) 49%, black 51%);
+      mask-image: linear-gradient(225deg, transparent 47%, rgba(0,0,0,0.6) 49%, black 51%);
+      -webkit-mask-size: 300% 300%;
+      mask-size: 300% 300%;
+      -webkit-mask-position: 100% 0%;
+      mask-position: 100% 0%;
+      animation: burn-mask-reveal 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      will-change: mask-position, -webkit-mask-position;
+    }
+    .burn-fire-edge {
+      background: 
+        linear-gradient(224deg, 
+          transparent 48.5%, 
+          rgba(20, 5, 0, 0.95) 49%, 
+          var(--burn-c1) 49.5%, 
+          var(--burn-c2) 50%, 
+          var(--burn-c3) 50.2%,
+          transparent 51%
+        ),
+        linear-gradient(226deg, 
+          transparent 48.5%, 
+          rgba(20, 5, 0, 0.95) 49%, 
+          var(--burn-c1) 49.5%, 
+          var(--burn-c2) 50%, 
+          var(--burn-c3) 50.2%,
+          transparent 51%
+        );
+      background-size: 300% 300%;
+      background-position: 100% 0%;
+      mix-blend-mode: normal;
+      filter: drop-shadow(0 0 8px var(--burn-c2)) blur(0.5px);
+      animation: burn-fire-scan 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      will-change: background-position, opacity;
+    }
   }
-  @keyframes burn-fire-scan {
-    0% { background-position: 100% 0%; opacity: 0; }
-    5% { opacity: 1; }
-    95% { opacity: 1; }
-    100% { background-position: 0% 100%; opacity: 0; }
-  }
-  .smooth-mask-wipe {
-    -webkit-mask-image: linear-gradient(225deg, transparent 47%, rgba(0,0,0,0.6) 49%, black 51%);
-    mask-image: linear-gradient(225deg, transparent 47%, rgba(0,0,0,0.6) 49%, black 51%);
-    -webkit-mask-size: 300% 300%;
-    mask-size: 300% 300%;
-    -webkit-mask-position: 100% 0%;
-    mask-position: 100% 0%;
-    animation: burn-mask-reveal 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    will-change: mask-position, -webkit-mask-position;
-  }
-  .burn-fire-edge {
-    background: 
-      linear-gradient(224deg, 
-        transparent 48.5%, 
-        rgba(20, 5, 0, 0.95) 49%, 
-        var(--burn-c1) 49.5%, 
-        var(--burn-c2) 50%, 
-        var(--burn-c3) 50.2%,
-        transparent 51%
-      ),
-      linear-gradient(226deg, 
-        transparent 48.5%, 
-        rgba(20, 5, 0, 0.95) 49%, 
-        var(--burn-c1) 49.5%, 
-        var(--burn-c2) 50%, 
-        var(--burn-c3) 50.2%,
-        transparent 51%
-      );
-    background-size: 300% 300%;
-    background-position: 100% 0%;
-    mix-blend-mode: normal;
-    filter: drop-shadow(0 0 8px var(--burn-c2)) blur(0.5px);
-    animation: burn-fire-scan 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    will-change: background-position, opacity;
+
+  @media (max-width: 639px) {
+    @keyframes mobile-fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .smooth-mask-wipe {
+      opacity: 0;
+      animation: mobile-fade-in 3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      will-change: opacity;
+    }
+    .burn-fire-edge {
+      display: none;
+    }
   }
 `;
 
@@ -156,7 +236,6 @@ const globalStyles = `
 // 🪄 КОМПОНЕНТ ЭФФЕКТА СГОРАНИЯ
 // ==========================================
 const BurnRevealImage = ({ src, className, style, imgClassName = "" }) => {
-  // Цветовая тема огня для фитнес-тренера (Ярко-красный)
   const theme = { 
     c1: 'rgba(153, 27, 27, 0.9)', 
     c2: 'rgba(220, 38, 38, 1)', 
@@ -184,122 +263,126 @@ const BurnRevealImage = ({ src, className, style, imgClassName = "" }) => {
 // ==========================================
 // 🏋️ КОМПОНЕНТ ВИЗИТКИ (ФИТНЕС-ТРЕНЕР)
 // ==========================================
-const FitnessCard = () => {
+const FitnessCard = ({ lang }) => {
+  const t = CONTENT[lang];
+
   return (
     <>
-      {/* ЛИЦЕВАЯ СТОРОНА */}
-      <div className="absolute inset-0 w-full h-full card-backface-hidden rounded-[2.5rem] shadow-[0_20px_50px_rgba(225,29,72,0.4)] overflow-hidden bg-black text-white flex flex-col p-6 group-hover:shadow-[0_20px_80px_rgba(244,63,94,0.6)] transition-shadow duration-700">
-        <div className="absolute inset-0 bg-gradient-to-tr from-red-600 via-rose-500 to-orange-500 opacity-70 mix-blend-screen"></div>
+      {/* ЛИЦЕВАЯ СТОРОНА (Все отступы, шрифты и иконки на clamp + cqw) */}
+      <div className="absolute inset-0 w-full h-full card-backface-hidden rounded-[2.5rem] shadow-[0_20px_50px_rgba(225,29,72,0.4)] overflow-hidden bg-black text-white flex flex-col p-[clamp(1rem,6cqw,1.5rem)] group-hover:shadow-[0_20px_80px_rgba(244,63,94,0.6)] transition-shadow duration-700">
+        <div className="absolute inset-0 bg-gradient-to-tr from-red-600 via-rose-500 to-orange-500 opacity-70 mix-blend-normal sm:mix-blend-screen"></div>
         
         {/* Темный градиент под фото */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-red-950/50 to-transparent"></div>
         
         {/* Сгорающий фон (Красный огонь) */}
-        <BurnRevealImage src={CONTENT.bgImage} className="opacity-50" />
+        <BurnRevealImage src={t.bgImage} className="opacity-50" />
         
         <div className="relative z-10 flex flex-col h-full justify-between">
           <div className="flex justify-between items-start">
-            <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/50 flex items-center gap-2 transform -skew-x-6 shadow-[4px_4px_0_rgba(225,29,72,0.5)]">
-              <Flame className="w-4 h-4 text-orange-400 transform skew-x-6" />
-              <span className="text-xs font-black italic tracking-widest uppercase text-rose-100 transform skew-x-6">{CONTENT.badge}</span>
+            <div className="bg-[#151515]/95 sm:bg-black/60 sm:backdrop-blur-md px-[clamp(0.5rem,3cqw,0.75rem)] py-[clamp(0.2rem,1.5cqw,0.35rem)] rounded-full border border-red-500/50 flex items-center gap-[clamp(0.25rem,1.5cqw,0.35rem)] transform -skew-x-6 shadow-[4px_4px_0_rgba(225,29,72,0.5)]">
+              <Flame className="w-[clamp(0.6rem,3cqw,0.85rem)] h-[clamp(0.6rem,3cqw,0.85rem)] text-orange-400 transform skew-x-6" />
+              <span className="text-[clamp(0.45rem,2.5cqw,0.6rem)] font-black italic tracking-widest uppercase text-rose-100 transform skew-x-6">{t.badge}</span>
             </div>
-            <Activity className="w-8 h-8 text-rose-200/80 drop-shadow-[0_0_10px_rgba(244,63,94,0.8)]" />
+            <Activity className="w-[clamp(1.5rem,8cqw,2rem)] h-[clamp(1.5rem,8cqw,2rem)] text-rose-200/80 drop-shadow-[0_0_10px_rgba(244,63,94,0.8)]" />
           </div>
 
           <div>
-            <h2 className="text-3xl sm:text-4xl leading-tight font-black italic mb-1 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0px_rgba(220,38,38,0.8)]">
-              {CONTENT.name1}
+            <h2 className="text-[clamp(1.8rem,9cqw,2.25rem)] leading-tight font-black italic mb-[clamp(0.15rem,1cqw,0.25rem)] uppercase tracking-tighter text-white drop-shadow-[4px_4px_0px_rgba(220,38,38,0.8)]">
+              {t.name1}
               <br />
-              {CONTENT.name2}
+              {t.name2}
             </h2>
-            <p className="text-rose-300 font-black italic text-xs uppercase tracking-[0.2em] mt-2 border-l-4 border-orange-500 pl-3">
-              {CONTENT.role}
+            <p className="text-rose-300 font-black italic text-[clamp(0.6rem,3cqw,0.75rem)] uppercase tracking-[0.2em] mt-[clamp(0.35rem,2cqw,0.5rem)] border-l-4 border-orange-500 pl-[clamp(0.5rem,3cqw,0.75rem)]">
+              {t.role}
             </p>
           </div>
         </div>
       </div>
 
-      {/* ОБРАТНАЯ СТОРОНА (Dynamics & Power Style) */}
-      <div className="absolute inset-0 w-full h-full card-backface-hidden rounded-[2.5rem] shadow-[0_20px_50px_rgba(225,29,72,0.4)] overflow-hidden bg-[#0a0a0a] flex flex-col p-5 text-white border-2 border-red-600/30" style={{ transform: 'rotateY(180deg)' }}>
+      {/* ОБРАТНАЯ СТОРОНА (Все отступы, шрифты и иконки на clamp + cqw) */}
+      <div className="absolute inset-0 w-full h-full card-backface-hidden rounded-[2.5rem] shadow-[0_20px_50px_rgba(225,29,72,0.4)] overflow-hidden bg-[#0a0a0a] flex flex-col p-[clamp(0.85rem,5cqw,1.25rem)] text-white border-2 border-red-600/30" style={{ transform: 'rotateY(180deg)' }}>
         
-        {/* Агрессивный фон: диагональные гоночные полосы (Карбон/Трек) */}
+        {/* Агрессивный фон: диагональные гоночные полосы */}
         <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(-45deg, #000 0, #000 3px, #dc2626 3px, #dc2626 6px)', backgroundSize: '16px 16px' }}></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent pointer-events-none"></div>
 
-        <div className="relative z-10 flex flex-col h-full gap-4">
+        <div className="relative z-10 flex flex-col h-full gap-[clamp(0.75rem,4cqw,1rem)]">
           
           {/* Хедер: Аватар и Имя со скосом */}
-          <div className="flex items-center gap-4 mt-1">
-            <div className="relative w-16 h-16 shrink-0 transform -skew-x-6 overflow-hidden border-b-4 border-r-4 border-red-600 bg-zinc-800 shadow-[4px_4px_15px_rgba(220,38,38,0.3)]">
-              <img src={CONTENT.avatar} alt={CONTENT.name1} className="w-full h-full object-cover transform skew-x-6 scale-125 grayscale contrast-125" />
+          <div className="flex items-center gap-[clamp(0.75rem,4cqw,1rem)] mt-[clamp(0.15rem,1cqw,0.25rem)]">
+            <div className="relative w-[clamp(3rem,16cqw,4rem)] h-[clamp(3rem,16cqw,4rem)] shrink-0 transform -skew-x-6 overflow-hidden border-b-4 border-r-4 border-red-600 bg-zinc-800 shadow-[4px_4px_15px_rgba(220,38,38,0.3)]">
+              <img src={t.avatar} alt={t.name1} className="w-full h-full object-cover transform skew-x-6 scale-125 grayscale contrast-125" />
             </div>
             <div className="flex flex-col">
-              <h3 className="text-xl font-black uppercase italic tracking-tighter text-white leading-none drop-shadow-[2px_2px_0px_#dc2626]">{CONTENT.username}</h3>
-              <div className="flex flex-col gap-1.5 mt-1.5">
-                 <p className="text-white text-[9px] uppercase tracking-[0.2em] font-black bg-red-600 w-fit px-2.5 py-0.5 transform -skew-x-6 shadow-[2px_2px_0px_#7f1d1d]">{CONTENT.subUsername}</p>
-                 <p className="text-zinc-400 text-[8px] uppercase tracking-[0.1em] font-black w-fit px-1 flex items-center gap-1.5"><MapPin className="w-2.5 h-2.5 text-red-500" /> {CONTENT.location}</p>
+              <h3 className="text-[clamp(1.1rem,6cqw,1.5rem)] font-black uppercase italic tracking-tighter text-white leading-none drop-shadow-[2px_2px_0px_#dc2626]">{t.username}</h3>
+              <div className="flex flex-col gap-[clamp(0.25rem,1.5cqw,0.375rem)] mt-[clamp(0.25rem,1.5cqw,0.375rem)]">
+                 <p className="text-white text-[clamp(0.45rem,2.2cqw,0.56rem)] uppercase tracking-[0.2em] font-black bg-red-600 w-fit px-[clamp(0.4rem,2.5cqw,0.625rem)] py-[clamp(0.1rem,0.5cqw,0.125rem)] transform -skew-x-6 shadow-[2px_2px_0px_#7f1d1d]">{t.subUsername}</p>
+                 <p className="text-zinc-400 text-[clamp(0.4rem,2cqw,0.5rem)] uppercase tracking-[0.1em] font-black w-fit px-[clamp(0.15rem,1cqw,0.25rem)] flex items-center gap-[clamp(0.25rem,1.5cqw,0.375rem)]"><MapPin className="w-[clamp(0.45rem,2.5cqw,0.625rem)] h-[clamp(0.45rem,2.5cqw,0.625rem)] text-red-500" /> {t.location}</p>
               </div>
             </div>
           </div>
           
           {/* Кольца активности (Smartwatch UI) */}
-          <div className="flex justify-around items-center bg-zinc-900/80 backdrop-blur-md py-4 px-2 border-y-2 border-red-600/50 transform -skew-x-3 shadow-[0_0_20px_rgba(220,38,38,0.15)]">
+          <div className="flex justify-around items-center bg-[#151515]/95 sm:bg-zinc-900/80 sm:backdrop-blur-md py-[clamp(0.75rem,4cqw,1rem)] px-[clamp(0.35rem,2cqw,0.5rem)] border-y-2 border-red-600/50 transform -skew-x-3 shadow-[0_0_20px_rgba(220,38,38,0.15)]">
             {/* Кольцо 1 */}
             <div className="flex flex-col items-center transform skew-x-3">
-              <div className="relative w-16 h-16 mb-2">
-                <svg className="w-full h-full transform -rotate-90 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]">
+              <div className="relative w-[clamp(3rem,16cqw,4rem)] h-[clamp(3rem,16cqw,4rem)] mb-[clamp(0.35rem,2cqw,0.5rem)]">
+                {/* Исправлено: добавлен viewBox для корректного масштабирования содержимого SVG */}
+                <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]">
                   <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="5" fill="transparent" className="text-zinc-800" />
                   <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="5" fill="transparent" strokeDasharray="163" strokeDashoffset="32" className="text-red-500 transition-all duration-1000 ease-out" strokeLinecap="round" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-black italic text-lg text-white drop-shadow-md">{CONTENT.stat1Value}</span>
+                  <span className="font-black italic text-[clamp(0.9rem,4.5cqw,1.125rem)] text-white drop-shadow-md">{t.stat1Value}</span>
                 </div>
               </div>
-              <p className="text-[9px] text-zinc-400 uppercase font-black tracking-widest leading-none">{CONTENT.stat1Title}</p>
+              <p className="text-[clamp(0.45rem,2.2cqw,0.56rem)] text-zinc-400 uppercase font-black tracking-widest leading-none">{t.stat1Title}</p>
             </div>
             
             {/* Вертикальный разделитель */}
-            <div className="w-0.5 h-12 bg-zinc-800 transform skew-x-3"></div>
+            <div className="w-0.5 h-[clamp(2.25rem,12cqw,3rem)] bg-zinc-800 transform skew-x-3"></div>
 
             {/* Кольцо 2 */}
             <div className="flex flex-col items-center transform skew-x-3">
-              <div className="relative w-16 h-16 mb-2">
-                <svg className="w-full h-full transform -rotate-90 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">
+              <div className="relative w-[clamp(3rem,16cqw,4rem)] h-[clamp(3rem,16cqw,4rem)] mb-[clamp(0.35rem,2cqw,0.5rem)]">
+                {/* Исправлено: добавлен viewBox для корректного масштабирования содержимого SVG */}
+                <svg viewBox="0 0 64 64" className="w-full h-full transform -rotate-90 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]">
                   <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="5" fill="transparent" className="text-zinc-800" />
                   <circle cx="32" cy="32" r="26" stroke="currentColor" strokeWidth="5" fill="transparent" strokeDasharray="163" strokeDashoffset="8" className="text-orange-500 transition-all duration-1000 ease-out" strokeLinecap="round" />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-black italic text-sm text-orange-400 drop-shadow-md">{CONTENT.stat2Value}</span>
+                  <span className="font-black italic text-[clamp(0.7rem,3.5cqw,0.875rem)] text-orange-400 drop-shadow-md">{t.stat2Value}</span>
                 </div>
               </div>
-              <p className="text-[9px] text-zinc-400 uppercase font-black tracking-widest leading-none">{CONTENT.stat2Title}</p>
+              <p className="text-[clamp(0.45rem,2.2cqw,0.56rem)] text-zinc-400 uppercase font-black tracking-widest leading-none">{t.stat2Title}</p>
             </div>
           </div>
 
           {/* Теги специализации */}
-          <div className="flex-1 flex flex-col justify-center gap-2.5 my-1 w-full pr-1">
-            {CONTENT.tags.map((tag, idx) => (
-               <div key={idx} className="bg-zinc-900 border border-zinc-800 transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] px-4 py-2.5 flex items-center gap-3 w-full">
-                 <Check className="w-4 h-4 text-red-600 transform skew-x-6 shrink-0" />
-                 <span className="font-black italic uppercase text-[10px] tracking-widest text-zinc-300 transform skew-x-6 leading-tight break-words">{tag}</span>
+          <div className="flex-1 flex flex-col justify-center gap-[clamp(0.4rem,2.5cqw,0.625rem)] my-[clamp(0.15rem,1cqw,0.25rem)] w-full pr-[clamp(0.15rem,1cqw,0.25rem)]">
+            {t.tags.map((tag, idx) => (
+               <div key={idx} className="bg-zinc-900 border border-zinc-800 transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] px-[clamp(0.75rem,4cqw,1rem)] py-[clamp(0.4rem,2.5cqw,0.625rem)] flex items-center gap-[clamp(0.5rem,3cqw,0.75rem)] w-full">
+                 <Check className="w-[clamp(0.75rem,4cqw,1rem)] h-[clamp(0.75rem,4cqw,1rem)] text-red-600 transform skew-x-6 shrink-0" />
+                 <span className="font-black italic uppercase text-[clamp(0.5rem,2.5cqw,0.625rem)] tracking-widest text-zinc-300 transform skew-x-6 leading-tight break-words">{tag}</span>
                </div>
             ))}
           </div>
 
-          {/* Соцсети и Главная кнопка (Педаль газа) */}
-          <div className="flex flex-col gap-2 mt-auto no-tilt" onClick={e => e.stopPropagation()}>
-            <div className="flex gap-2 w-full">
-               <a href={CONTENT.waLink} target="_blank" rel="noopener noreferrer" className="flex-1 bg-zinc-900 border border-zinc-800 py-2.5 flex items-center justify-center text-green-400 hover:bg-zinc-800 transition-colors transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] group">
-                 <Phone className="w-4 h-4 transform skew-x-6 group-hover:scale-110 transition-transform" />
+          {/* Соцсети и Главная кнопка */}
+          <div className="flex flex-col gap-[clamp(0.35rem,2cqw,0.5rem)] mt-auto no-tilt" onClick={e => e.stopPropagation()}>
+            <div className="flex gap-[clamp(0.35rem,2cqw,0.5rem)] w-full">
+               <a href={t.waLink} target="_blank" rel="noopener noreferrer" className="flex-1 bg-zinc-900 border border-zinc-800 py-[clamp(0.4rem,2.5cqw,0.625rem)] flex items-center justify-center text-green-400 hover:bg-zinc-800 transition-colors transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] group">
+                 <Phone className="w-[clamp(0.75rem,4cqw,1rem)] h-[clamp(0.75rem,4cqw,1rem)] transform skew-x-6 group-hover:scale-110 transition-transform" />
                </a>
-               <a href={CONTENT.instLink} target="_blank" rel="noopener noreferrer" className="flex-1 bg-zinc-900 border border-zinc-800 py-2.5 flex items-center justify-center text-pink-500 hover:bg-zinc-800 transition-colors transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] group">
-                 <InstagramIcon className="w-4 h-4 transform skew-x-6 group-hover:scale-110 transition-transform" />
+               <a href={t.instLink} target="_blank" rel="noopener noreferrer" className="flex-1 bg-zinc-900 border border-zinc-800 py-[clamp(0.4rem,2.5cqw,0.625rem)] flex items-center justify-center text-pink-500 hover:bg-zinc-800 transition-colors transform -skew-x-6 shadow-[3px_3px_0_rgba(0,0,0,0.5)] group">
+                 <InstagramIcon className="w-[clamp(0.75rem,4cqw,1rem)] h-[clamp(0.75rem,4cqw,1rem)] transform skew-x-6 group-hover:scale-110 transition-transform" />
                </a>
             </div>
             
-            <a href={CONTENT.actionLink} className="w-full bg-red-600 text-white font-black italic uppercase tracking-widest py-3.5 flex items-center justify-center gap-2 hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)] transform -skew-x-6 border-b-[5px] border-r-[3px] border-red-900 active:border-b-0 active:border-r-0 active:translate-y-[5px] active:translate-x-[3px]">
-              <span className="transform skew-x-6 flex items-center justify-center gap-2 text-xs w-full px-4 text-center">
-                {CONTENT.actionText} <Flame className="w-4 h-4" />
+            <a href={t.actionLink} className="w-full bg-red-600 text-white font-black italic uppercase tracking-widest py-[clamp(0.6rem,3.5cqw,0.875rem)] flex items-center justify-center gap-[clamp(0.35rem,2cqw,0.5rem)] hover:bg-red-500 transition-all shadow-[0_0_20px_rgba(220,38,38,0.4)] transform -skew-x-6 border-b-[5px] border-r-[3px] border-red-900 active:border-b-0 active:border-r-0 active:translate-y-[5px] active:translate-x-[3px]">
+              <span className="transform skew-x-6 flex items-center justify-center gap-[clamp(0.35rem,2cqw,0.5rem)] text-[clamp(0.6rem,3cqw,0.75rem)] w-full px-[clamp(0.75rem,4cqw,1rem)] text-center">
+                {t.actionText} <Flame className="w-[clamp(0.75rem,4cqw,1rem)] h-[clamp(0.75rem,4cqw,1rem)]" />
               </span>
             </a>
           </div>
@@ -326,7 +409,6 @@ const App = () => {
   const audioCtxRef = useRef(null);
   const isFlippingRef = useRef(false);
 
-  // Настройки цвета темы под фитнес-тренера (Агрессивно красный/розовый)
   const glowColor = 'rgba(225,29,72,0.6)';
   const modalTheme = { bg: 'rgba(225,29,72,0.15)', border: 'rgba(225,29,72,0.3)', icon: 'text-rose-400' };
 
@@ -411,9 +493,7 @@ const App = () => {
 
       osc.start(ctx.currentTime);
       osc.stop(ctx.currentTime + 0.15);
-    } catch (e) {
-      // Игнорируем ошибки автоплея
-    }
+    } catch (e) {}
   };
 
   const handleFlip = () => {
@@ -461,11 +541,12 @@ const App = () => {
   };
 
   const handleShare = async () => {
+    const t = CONTENT[lang];
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Моя цифровая визитка',
-          text: 'Привет! Вот моя визитка с контактами:',
+          title: t.vcardTitle,
+          text: t.vcardDesc,
           url: window.location.href,
         });
       } catch (err) {}
@@ -475,17 +556,18 @@ const App = () => {
   };
 
   const downloadVCard = () => {
+    const t = CONTENT[lang];
     let phoneStr = '';
-    if (CONTENT.waLink) {
-      const match = CONTENT.waLink.match(/\d+/);
+    if (t.waLink) {
+      const match = t.waLink.match(/\d+/);
       if (match) phoneStr = `+${match[0]}`;
     }
 
     const vcard = [
       'BEGIN:VCARD',
       'VERSION:3.0',
-      `FN:${CONTENT.name1} ${CONTENT.name2}`,
-      `TITLE:${CONTENT.role}`,
+      `FN:${t.name1} ${t.name2}`,
+      `TITLE:${t.role}`,
       phoneStr ? `TEL;TYPE=CELL,VOICE:${phoneStr}` : '',
       phoneStr ? `URL;TYPE=WhatsApp:https://wa.me/${phoneStr.replace('+', '')}` : '',
       `URL:${typeof window !== 'undefined' ? window.location.href : ''}`,
@@ -503,28 +585,30 @@ const App = () => {
     URL.revokeObjectURL(url);
   };
 
+  const t = CONTENT[lang]; // Для модального окна
+
   return (
     <div className="min-h-[100dvh] bg-neutral-950 flex flex-col font-sans select-none relative overflow-hidden justify-center items-center p-4 sm:p-8">
       <style>{globalStyles}</style>
 
-      {/* Параллакс (Тематические цвета тренера - Red/Rose) */}
+      {/* Параллакс (Скрыт на мобильных для производительности) */}
       <div 
-        className="fixed top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-[120px] pointer-events-none transition-transform duration-1000 ease-out"
+        className="fixed top-1/4 left-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-[120px] hidden sm:block pointer-events-none transition-transform duration-1000 ease-out"
         style={{ transform: `translate(${bgOffset.x}px, ${bgOffset.y}px)` }}
       ></div>
       <div 
-        className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-[120px] pointer-events-none transition-transform duration-1000 ease-out"
+        className="fixed bottom-1/4 right-1/4 w-96 h-96 bg-rose-500/10 rounded-full blur-[120px] hidden sm:block pointer-events-none transition-transform duration-1000 ease-out"
         style={{ transform: `translate(${bgOffset.x * 1.5}px, ${bgOffset.y * 1.5}px)` }}
       ></div>
 
-      {/* Основной контейнер */}
-      <div className="w-full flex flex-col items-center relative z-40">
+      {/* Основной контейнер с применением flex-1 min-h-0 для идеального центрирования */}
+      <div className="flex-1 w-full flex items-center justify-center min-h-0 relative z-40">
         
         {/* Карточка */}
         <div 
           ref={cardRef}
-          className="relative z-10 w-full aspect-[1/1.6] sm:aspect-[1/1.5] cursor-pointer group animate-float touch-none"
-          style={{ perspective: '1500px', maxWidth: 'min(22rem, 85vw, 55vh)' }}
+          className="relative z-10 w-full aspect-[1/1.6] sm:aspect-[1/1.5] cursor-pointer group animate-float touch-none @container"
+          style={{ perspective: '1500px', maxWidth: 'min(26rem, 94vw, 52dvh)' }}
           onClick={handleFlip}
           onMouseMove={handlePointerMove}
           onMouseLeave={handlePointerLeave}
@@ -572,24 +656,22 @@ const App = () => {
                 style={{ transform: 'rotateY(180deg)', boxShadow: `0 0 60px ${glowColor}` }} 
               />
 
-              <FitnessCard />
+              <FitnessCard lang={lang} />
 
               <div 
-                className="absolute inset-0 w-full h-full rounded-[2.5rem] pointer-events-none transition-opacity duration-300 card-backface-hidden"
+                className="absolute inset-0 w-full h-full rounded-[2.5rem] pointer-events-none transition-opacity duration-300 card-backface-hidden mix-blend-normal sm:mix-blend-overlay"
                 style={{
                   background: `radial-gradient(farthest-corner circle at ${glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 80%)`,
                   opacity: glare.opacity,
-                  mixBlendMode: 'overlay',
                   zIndex: 50,
                 }}
               />
               <div 
-                className="absolute inset-0 w-full h-full rounded-[2.5rem] pointer-events-none transition-opacity duration-300 card-backface-hidden"
+                className="absolute inset-0 w-full h-full rounded-[2.5rem] pointer-events-none transition-opacity duration-300 card-backface-hidden mix-blend-normal sm:mix-blend-overlay"
                 style={{
                   transform: 'rotateY(180deg) translateZ(0)',
                   background: `radial-gradient(farthest-corner circle at ${100 - glare.x}% ${glare.y}%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 80%)`,
                   opacity: glare.opacity,
-                  mixBlendMode: 'overlay',
                   zIndex: 50,
                 }}
               />
@@ -597,14 +679,14 @@ const App = () => {
           </div>
         </div>
 
-        {/* ПАНЕЛЬ КНОПОК ПОД ВИЗИТКОЙ */}
-        <div className="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4 bg-white/5 backdrop-blur-xl border border-white/10 p-2 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 relative">
+        {/* ПАНЕЛЬ КНОПОК ПОД ВИЗИТКОЙ (Фиксированная и компактная) */}
+        <div className="fixed bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 z-50 flex items-center gap-2 sm:gap-3 bg-[#181818]/95 sm:bg-white/5 sm:backdrop-blur-xl border border-white/10 p-1.5 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.5)]">
           <div className="flex items-center gap-0.5 px-1">
             {['RU', 'AM', 'EN'].map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
-                className={`relative px-3 py-1.5 rounded-full text-[10px] font-bold tracking-widest transition-all duration-500 ${lang === l ? 'text-white' : 'text-white/40 hover:text-white/80'}`}
+                className={`relative px-2.5 py-1 rounded-full text-[9px] font-bold tracking-widest transition-all duration-500 ${lang === l ? 'text-white' : 'text-white/40 hover:text-white/80'}`}
               >
                 {lang === l && (
                   <span className="absolute inset-0 bg-white/10 border border-white/20 rounded-full shadow-[inset_0_0_8px_rgba(255,255,255,0.1)] pointer-events-none"></span>
@@ -614,16 +696,16 @@ const App = () => {
             ))}
           </div>
 
-          <div className="w-px h-6 bg-white/20 mx-1"></div>
+          <div className="w-px h-5 bg-white/20 mx-0.5"></div>
 
           <button
             onClick={() => {
               if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate(15);
               setShowShare(true);
             }}
-            className="p-2.5 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
+            className="p-2 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
           >
-            <QrCode className="w-5 h-5" />
+            <QrCode className="w-4 h-4" />
           </button>
 
           <button
@@ -631,9 +713,9 @@ const App = () => {
               if (typeof navigator !== 'undefined' && navigator.vibrate) navigator.vibrate(15);
               downloadVCard();
             }}
-            className="p-2.5 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
+            className="p-2 rounded-full text-white/60 hover:text-white hover:bg-white/10 transition-all duration-300"
           >
-            <UserPlus className="w-5 h-5" />
+            <UserPlus className="w-4 h-4" />
           </button>
         </div>
 
@@ -642,12 +724,12 @@ const App = () => {
       {/* МОДАЛЬНОЕ ОКНО ПОДЕЛИТЬСЯ */}
       {showShare && (
         <div 
-          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm transition-opacity animate-in fade-in duration-200" 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#151515]/95 sm:bg-black/40 sm:backdrop-blur-sm transition-opacity animate-in fade-in duration-200" 
           onClick={() => setShowShare(false)}
         >
           <div 
-            className="backdrop-blur-3xl rounded-[2.5rem] p-6 sm:p-8 w-full max-w-sm flex flex-col items-center relative shadow-2xl animate-in zoom-in-95 duration-200 border" 
-            style={{ backgroundColor: modalTheme.bg, borderColor: modalTheme.border }}
+            className="bg-[#151515]/95 sm:bg-[rgba(225,29,72,0.15)] sm:backdrop-blur-3xl rounded-[2.5rem] p-6 sm:p-8 w-full max-w-sm flex flex-col items-center relative shadow-2xl animate-in zoom-in-95 duration-200 border" 
+            style={{ borderColor: modalTheme.border }}
             onClick={e => e.stopPropagation()}
           >
             <button 
@@ -661,8 +743,8 @@ const App = () => {
               <QrCode className={`w-6 h-6 ${modalTheme.icon}`} />
             </div>
             
-            <h3 className="text-xl font-bold text-white mb-2 tracking-wide">Поделиться визиткой</h3>
-            <p className="text-sm text-white/60 text-center mb-6 leading-relaxed">Дайте отсканировать QR-код или отправьте ссылку напрямую.</p>
+            <h3 className="text-xl font-bold text-white mb-2 tracking-wide">{t.shareTitle}</h3>
+            <p className="text-sm text-white/60 text-center mb-6 leading-relaxed">{t.shareDesc}</p>
             
             <div className="bg-white p-4 rounded-3xl mb-6 shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center justify-center">
               <img 
@@ -678,14 +760,14 @@ const App = () => {
                 className="flex-1 bg-black/20 hover:bg-black/40 border border-white/10 text-white font-medium py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 transition-colors text-sm"
               >
                 {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
-                {copied ? 'Скопировано!' : 'Копировать'}
+                {copied ? t.copied : t.copy}
               </button>
               <button 
                 onClick={handleShare}
                 className="flex-1 bg-white/10 hover:bg-white/20 border border-white/10 text-white font-bold py-3.5 px-4 rounded-2xl flex items-center justify-center gap-2 transition-colors text-sm"
               >
                 <Share2 className="w-4 h-4" />
-                Отправить
+                {t.shareBtn}
               </button>
             </div>
           </div>
